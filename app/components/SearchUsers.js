@@ -1,5 +1,5 @@
 export default () => {
   return <>
-    Search Twitter Users
+    <input placeholder="Search users"/>
   </> 
 }

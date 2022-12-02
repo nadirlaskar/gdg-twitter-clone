@@ -1,5 +1,5 @@
 export default  ({list}) => {
     return list.map((tweet)=>{
-        return tweet?.tweet
+        return <div>{tweet?.tweet}</div>
     })
   }

@@ -7,7 +7,7 @@ import useExploreTweets from '../hooks/useExploreTweets';
 export default function Home() {
   const {loading, tweets, error} = useExploreTweets();
   return (
-    <div className={'container'}>
+    <div className={"container m-auto"}>
       <Head>
         <title>Explore</title>
         <link rel="icon" href="/favicon.ico" />
