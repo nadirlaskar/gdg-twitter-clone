@@ -1,22 +1,15 @@
-import Head from 'next/head';
-import SearchUsers from '../components/SearchUsers';
-import TweetList from '../components/TweetList';
+import Layout from "../components/Layout";
+import TweetList from "../components/TweetList";
 import useExploreTweets from '../hooks/useExploreTweets';
 
-
 export default function Home() {
-  const {loading, tweets, error} = useExploreTweets();
+  const {tweets} = useExploreTweets();
   return (
-    <div className={"container m-auto"}>
-      <Head>
-        <title>Explore</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main>
-        <SearchUsers />
+    <Layout title="Explore">
+      <h1 className="py-3">Explore</h1>
+      <div className="h-screen w-full">
         <TweetList list={tweets} />
-      </main>
-    </div>
+      </div>
+    </Layout>
   )
 }

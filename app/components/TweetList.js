@@ -1,5 +1,6 @@
-export default  ({list}) => {
+import Tweet from './Tweet'
+export default ({ list }) => {
     return list.map((tweet)=>{
-        return <div>{tweet?.tweet}</div>
+        return <Tweet key={tweet.id} tweet={tweet} />
     })
   }

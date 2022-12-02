@@ -1,4 +1,4 @@
-import { collection, getDocs, getFirestore } from 'firebase/firestore/lite';
+import { collection, getDocs, getFirestore, orderBy, query } from 'firebase/firestore';
 import { useEffect, useState } from "react";
 export default () => {
     const [loading, setLoading] = useState(true);
@@ -8,7 +8,8 @@ export default () => {
     useEffect(()=>{
         const db = getFirestore();
         const tweetsCollection = collection(db, 'tweets');
-        getDocs(tweetsCollection).then((querySnapshot) => {
+        const q = query(tweetsCollection,orderBy("timestamp", "desc"));
+        getDocs(q).then((querySnapshot) => {
             const tweets = querySnapshot.docs.map((doc) => doc.data());
             setTweets(tweets);
             setLoading(false);
