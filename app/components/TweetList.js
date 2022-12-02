@@ -1,5 +1,5 @@
-export default TweetList = ({list}) => {
+export default  ({list}) => {
     return list.map((tweet)=>{
-        return 'tweet'
+        return tweet?.tweet
     })
   }

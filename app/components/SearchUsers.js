@@ -1,4 +1,4 @@
-export default SearchUsers = () => {
+export default () => {
   return <>
     Search Twitter Users
   </> 
